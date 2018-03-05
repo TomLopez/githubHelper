@@ -1,7 +1,7 @@
 define(['marionette', 'config',
 	'./base/home/lyt-home',
 ], function (Marionette, config,
-	LytHome, LytInte, LytConsult, LytModif, LytCreatLots, LytLanguage, LytLanguageManaging, LytCreat, LytTypes, LytTypeManaging, LytTypeRegles, LytContext
+	LytHome, 
 
 ) {
 		'use strict';

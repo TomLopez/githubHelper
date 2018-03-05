@@ -5,8 +5,9 @@ define(['marionette',
 	'jquery',
   'jqueryui',
   'i18n',
-  'config'],
-function(Marionette, _, TransitionRegion, Translater, jQuery, ui, I18n,config) {
+  'config',
+  'base/header/lyt-header'],
+function(Marionette, _, TransitionRegion, Translater, jQuery, ui, I18n,config, LytHeader) {
 	'use strict';
 
 
@@ -18,6 +19,7 @@ function(Marionette, _, TransitionRegion, Translater, jQuery, ui, I18n,config) {
 
 		regions: {
 			rgHeader: 'header',
+			rgMain: '#rgMain',
       rgFooter: 'footer',
 		},
 

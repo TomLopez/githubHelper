@@ -89,4 +89,6 @@ require(['app', 'templates', 'translater', 'config'], function (app, templates, 
 	var x = document.cookie;
 	var _this = this;
 	var userDatas;
+	app.start();
+	this.translater = Translater.getTranslater();
 });
