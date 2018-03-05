@@ -36,9 +36,9 @@ function(Marionette, config) {
 		onShow : function(options) {
 			var listProject = [
 				{owner : 'gabcoh1986', repo:'futbakserver'},
-				// {owner : 'gabcoh1986', repo:'futbakadmin'},
-				// {owner : 'gabcoh1986', repo:'futbakdesk'},
-				// {owner : 'gabcoh1986', repo:'futbakPlayers-private'},
+				{owner : 'gabcoh1986', repo:'futbakadmin'},
+				{owner : 'gabcoh1986', repo:'futbakdesk'},
+				{owner : 'gabcoh1986', repo:'futbakPlayers-private'},
 			]
 			for(var i in listProject){
 				listProject[i].prs = this.managePRs(this.senderWParam(listProject[i].owner,listProject[i].repo,'pulls?state=closed'));
@@ -58,7 +58,6 @@ function(Marionette, config) {
 			}).done(function(data){
 				result = data;			
 			});
-			console.log('sender result', result)
 			return result;
 		},
 
@@ -72,7 +71,6 @@ function(Marionette, config) {
 				},
 				url: url
 			}).done(function(data){
-				console.log('infos sur les commits', data)
 				result = data;			
 			});			
 			return result;
@@ -110,16 +108,27 @@ function(Marionette, config) {
 		drawInformations: function(list){
 			var container = $('#prContainer')
 			for(var i in list){
-				var tmpl = document.getElementById('informationsTemplate').content.cloneNode(true);
-				$(tmpl).find('#repoName').text(list[i].repo);
+
+				var t = document.querySelector('#informationsTemplate');
+
+// set
+				t.content.querySelector('#repoName').innerHTML = list[i].repo;
+				t.content.querySelector('#repoCommit').innerHTML = list[i].nb_commits;
+				t.content.querySelector('#prNb').innerHTML = list[i].prs.length;
+
+				var clone = document.importNode(t.content, true); // where true means deep copy
+
 				for(var j in list[i].prs){
-					var tmplList = document.getElementById('listTemplate').content.cloneNode(true);
-					console.log('iojuhqedfbvuiphaqer', tmplList, list[i].prs[j].title)
-					$(tmplList).find('#prName').text(list[i].prs[j].title);
-					$(tmpl).find('#prList').append(tmplList);
+					var t2 = document.querySelector('#listTemplate');
+					t2.content.querySelector('#prName').innerHTML = list[i].prs[j].title;
+					t2.content.querySelector('#prStarDate').innerHTML = list[i].prs[j].created_at;
+					t2.content.querySelector('#prEndDate').innerHTML = list[i].prs[j].closed_at;
+					t2.content.querySelector('#prInterval').innerHTML = list[i].prs[j].interval;
+					t2.content.querySelector('#nbCommits').innerHTML = list[i].prs[j].nb_commits;
+					var clone2 = document.importNode(t2.content, true);
+					clone.querySelector('#prList').append(clone2);
 				}
-				console.log('title', list[i].repo);
-				container.append(tmpl);
+				container.append(clone);
 			}
 		}
 	});
