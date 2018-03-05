@@ -1,5 +1,5 @@
-define(['marionette','i18n'],
-function(Marionette) {
+define(['marionette','config','i18n'],
+function(Marionette, config) {
 	'use strict';
 
 	return Marionette.LayoutView.extend({
@@ -52,7 +52,7 @@ function(Marionette) {
 				async: false,
 				type: "GET",
 				beforeSend: function (xhr) {
-					xhr.setRequestHeader ("Authorization", "Basic " + btoa("cdcvidal:01234560a"));
+					xhr.setRequestHeader ("Authorization", "Basic " + btoa(config.gitUser.login + ":" + config.gitUser.mdp));
 				},
 				url: 'https://api.github.com/repos/' + projectOwner + '/' + project + '/' + paramUrl
 			}).done(function(data){
