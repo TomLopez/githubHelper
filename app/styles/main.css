@@ -10022,4 +10022,20 @@ li.list-group-item.validated {
 .btn[disabled] {
   pointer-events: auto;
 }
+#listLanguages label {
+  float: left;
+}
+#listLanguages ul {
+  margin: 0;
+  list-style: none;
+  float: left;
+}
+#inputCities label {
+  float: left;
+}
+#inputCities input {
+  margin: 0;
+  list-style: none;
+  float: left;
+}
 /*# sourceMappingURL=main.css.map */

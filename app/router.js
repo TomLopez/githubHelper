@@ -10,6 +10,8 @@ define(['jquery', 'marionette', 'backbone', 'config', './base/header/lyt-header'
 	'use strict';
 	return Marionette.AppRouter.extend({
 		appRoutes: {
+			'users': 'users',
+			'prs': 'prs',
 			'*route(/:page)': 'home',
 		},
 

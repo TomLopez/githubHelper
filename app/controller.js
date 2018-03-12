@@ -1,7 +1,11 @@
 define(['marionette', 'config',
 	'./base/home/lyt-home',
+	'./base/prs/lyt-prs',
+	'./base/users/lyt-users',
 ], function (Marionette, config,
-	LytHome
+	LytHome,
+	LytPrs,
+	LytUsers
 
 ) {
 		'use strict';
@@ -16,5 +20,11 @@ define(['marionette', 'config',
 			home: function () {
 				this.rgMain.show(new LytHome());
 			},
+			prs: function(){
+				this.rgMain.show(new LytPrs());
+			},
+			users: function(){
+				this.rgMain.show(new LytUsers());
+			}
 		});
 	});
