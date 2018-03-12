@@ -10035,7 +10035,11 @@ li.list-group-item.validated {
 }
 #inputCities input {
   margin: 0;
+  margin-left: 10px;
   list-style: none;
   float: left;
+}
+.goUnder {
+  clear: both;
 }
 /*# sourceMappingURL=main.css.map */

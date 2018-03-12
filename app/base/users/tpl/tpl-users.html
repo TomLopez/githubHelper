@@ -1,45 +1,63 @@
+<template id="informationsTemplate">
+    <div id="informations">
+        <p>Pseudo developpeur :
+            <span id="devName"></span>
+        </p>
+       
+        <p>Mail :
+            <span id="mail"></span>            
+        </p>
+
+    </div>
+</template>
 <div class="">
     <div id="listLanguages">
         <label>Langages souhaités</label>
         <ul>
             <li>
-                <input type="checkbox"> JavaScript </li>
+                <input type="radio" id="languageChoice1" name="language" value="JavaScript"> JavaScript </li>
             <li>
-                <input type="checkbox"> Java </li>
+                <input type="radio" id="languageChoice2" name="language" value="Java"> Java </li>
             <li>
-                <input type="checkbox"> Python </li>
+                <input type="radio" id="languageChoice3" name="language" value="Python"> Python </li>
             <li>
-                <input type="checkbox"> CSS </li>
+                <input type="radio" id="languageChoice4" name="language" value="CSS"> CSS </li>
             <li>
-                <input type="checkbox"> PHP </li>
+                <input type="radio" id="languageChoice5" name="language" value="PHP"> PHP </li>
             <li>
-                <input type="checkbox"> Runy </li>
+                <input type="radio" id="languageChoice6" name="language" value="Runy"> Runy </li>
             <li>
-                <input type="checkbox"> C++ </li>
+                <input type="radio" id="languageChoice7" name="language" value="C++"> C++ </li>
             <li>
-                <input type="checkbox"> C </li>
+                <input type="radio" id="languageChoice8" name="language" value="C"> C </li>
             <li>
-                <input type="checkbox"> Objectiv-C </li>
+                <input type="radio" id="languageChoice9" name="language" value="Objectiv-C"> Objectiv-C </li>
             <li>
-                <input type="checkbox"> R </li>
+                <input type="radio" id="languageChoice10" name="language" value="R"> R </li>
             <li>
-                <input type="checkbox"> VimL </li>
+                <input type="radio" id="languageChoice11" name="language" value="VimL"> VimL </li>
             <li>
-                <input type="checkbox"> Go </li>
+                <input type="radio" id="languageChoice12" name="language" value="Go"> Go </li>
             <li>
-                <input type="checkbox"> Perl </li>
+                <input type="radio" id="languageChoice13" name="language" value="Perl"> Perl </li>
             <li>
-                <input type="checkbox"> CoffeeScript </li>
+                <input type="radio" id="languageChoice14" name="language" value="CoffeeScript"> CoffeeScript </li>
             <li>
-                <input type="checkbox"> TeX </li>
+                <input type="radio" id="languageChoice15" name="language" value="TeX"> TeX </li>
             <li>
-                <input type="checkbox"> Swift </li>
+                <input type="radio" id="languageChoice16" name="language" value="Swift"> Swift </li>
             <li>
-                <input type="checkbox"> Scala </li>
+                <input type="radio" id="languageChoice17" name="language" value="Scala"> Scala </li>
         </ul>
     </div>
+
     <div id="inputCities">
-        <label>Ville recherchées</label>
-        <input type="text" id="cities" placeholder="Separées par des ;">
+        <label>Ville recherchée</label>
+        <input type="text" id="city" placeholder="">
     </div>
+    <div class="goUnder">
+        <button id="getEmails">Donnez moi des emails!</button>
+    </div>
+    </br>
+    <div class="goUnder" id="infomationsContainer"></div>
 </div>
